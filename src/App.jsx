@@ -1,5 +1,6 @@
 import "./App.css";
 import styled from "styled-components";
+import Header from './components/Header/Header';
 
 const StContainer = styled.div`
   border: 1px solid red;
@@ -11,7 +12,9 @@ const StContainer = styled.div`
 `;
 
 function App() {
-  return <StContainer>Hello</StContainer>;
+  return <StContainer>
+    <Header/>
+  </StContainer>;
 }
 
 export default App;
