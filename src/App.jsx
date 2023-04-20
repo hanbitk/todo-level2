@@ -1,6 +1,7 @@
 import "./App.css";
 import styled from "styled-components";
 import Header from './components/Header/Header';
+import Form from './components/Form/Form';
 
 const StContainer = styled.div`
   border: 1px solid red;
@@ -14,6 +15,7 @@ const StContainer = styled.div`
 function App() {
   return <StContainer>
     <Header/>
+    <Form/>
   </StContainer>;
 }
 

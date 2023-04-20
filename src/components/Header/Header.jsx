@@ -8,7 +8,7 @@ const StHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  padding: 10px;
+  padding: 20px;
   margin-top: 10px;
 `;
 
