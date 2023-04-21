@@ -75,6 +75,8 @@ function Form() {
     setDescription("");
   };
 
+  console.log(todos)
+
   return (
     <StForm onSubmit={todoSubmitHandler}>
       <StFormInputs>

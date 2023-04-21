@@ -1,6 +1,7 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { deleteTodo } from "../../redux/modules/todos";
 
 const StTodosContainer = styled.div`
   padding: 20px;
@@ -53,6 +54,15 @@ function Todos() {
     return state.todos;
   });
 
+  const dispatch = useDispatch();
+
+  const deleteTodoHandler = (id) => {
+    const newTodos = todos.filter((todo) => {
+      return todo.id !== id;
+    });
+    dispatch(deleteTodo(newTodos));
+  };
+
   // console.log(todos);
   // 현재 todos는 배열안에 각 todo 객체를 리턴하는 중
   return (
@@ -71,7 +81,12 @@ function Todos() {
                   <StTodoBoxh2>{todo.title}</StTodoBoxh2>
                   <StTodoBoxP>{todo.description}</StTodoBoxP>
                   <StTodoBoxButtonDiv>
-                    <StTodoBoxButton borderColor="red">Delete</StTodoBoxButton>
+                    <StTodoBoxButton
+                      borderColor="red"
+                      onClick={() => deleteTodoHandler(todo.id)}
+                    >
+                      Delete
+                    </StTodoBoxButton>
                     <StTodoBoxButton borderColor="green">
                       Complete
                     </StTodoBoxButton>
