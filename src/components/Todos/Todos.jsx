@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 const StTodosContainer = styled.div`
   padding: 20px;
@@ -49,11 +49,12 @@ const StTodoBoxButton = styled.button`
 `;
 
 function Todos() {
-  // const todos = useSelector((state) => {
-  //   return state.todos;
-  // });
+  const todos = useSelector((state) => {
+    return state.todos;
+  });
 
   // console.log(todos);
+  // 현재 todos는 배열안에 각 todo 객체를 리턴하는 중
   return (
     <StTodosContainer>
       <StTodosDiv>
@@ -61,24 +62,23 @@ function Todos() {
           <StTodoh2>Working...🔥</StTodoh2>
         </StTodoTitleDiv>
         <StTodoDiv>
-          <StTodoBoxDiv>
-            <StTodoBoxP>Details</StTodoBoxP>
-            <StTodoBoxh2>Title</StTodoBoxh2>
-            <StTodoBoxP>Description</StTodoBoxP>
-            <StTodoBoxButtonDiv>
-              <StTodoBoxButton borderColor="red">Delete</StTodoBoxButton>
-              <StTodoBoxButton borderColor="green">Complete</StTodoBoxButton>
-            </StTodoBoxButtonDiv>
-          </StTodoBoxDiv>
-          <StTodoBoxDiv>
-            <StTodoBoxP>Details</StTodoBoxP>
-            <StTodoBoxh2>Title</StTodoBoxh2>
-            <StTodoBoxP>Description</StTodoBoxP>
-            <StTodoBoxButtonDiv>
-              <StTodoBoxButton borderColor="red">Delete</StTodoBoxButton>
-              <StTodoBoxButton borderColor="green">Complete</StTodoBoxButton>
-            </StTodoBoxButtonDiv>
-          </StTodoBoxDiv>
+          {todos
+            .filter((todo) => !todo.isDone)
+            .map((todo) => {
+              return (
+                <StTodoBoxDiv key={todo.id}>
+                  <StTodoBoxP>{todo.details}</StTodoBoxP>
+                  <StTodoBoxh2>{todo.title}</StTodoBoxh2>
+                  <StTodoBoxP>{todo.description}</StTodoBoxP>
+                  <StTodoBoxButtonDiv>
+                    <StTodoBoxButton borderColor="red">Delete</StTodoBoxButton>
+                    <StTodoBoxButton borderColor="green">
+                      Complete
+                    </StTodoBoxButton>
+                  </StTodoBoxButtonDiv>
+                </StTodoBoxDiv>
+              );
+            })}
         </StTodoDiv>
       </StTodosDiv>
 
@@ -87,24 +87,23 @@ function Todos() {
           <StTodoh2>Done...🌈</StTodoh2>
         </StTodoTitleDiv>
         <StTodoDiv>
-          <StTodoBoxDiv>
-            <StTodoBoxP>Details</StTodoBoxP>
-            <StTodoBoxh2>Title</StTodoBoxh2>
-            <StTodoBoxP>Description</StTodoBoxP>
-            <StTodoBoxButtonDiv>
-              <StTodoBoxButton borderColor="red">Delete</StTodoBoxButton>
-              <StTodoBoxButton borderColor="green">Incomplete</StTodoBoxButton>
-            </StTodoBoxButtonDiv>
-          </StTodoBoxDiv>
-          <StTodoBoxDiv>
-            <StTodoBoxP>Details</StTodoBoxP>
-            <StTodoBoxh2>Title</StTodoBoxh2>
-            <StTodoBoxP>Description</StTodoBoxP>
-            <StTodoBoxButtonDiv>
-              <StTodoBoxButton borderColor="red">Delete</StTodoBoxButton>
-              <StTodoBoxButton borderColor="green">Incomplete</StTodoBoxButton>
-            </StTodoBoxButtonDiv>
-          </StTodoBoxDiv>
+          {todos
+            .filter((todo) => todo.isDone)
+            .map((todo) => {
+              return (
+                <StTodoBoxDiv key={todo.id}>
+                  <StTodoBoxP>{todo.details}</StTodoBoxP>
+                  <StTodoBoxh2>{todo.title}</StTodoBoxh2>
+                  <StTodoBoxP>{todo.description}</StTodoBoxP>
+                  <StTodoBoxButtonDiv>
+                    <StTodoBoxButton borderColor="red">Delete</StTodoBoxButton>
+                    <StTodoBoxButton borderColor="green">
+                      Incomplete
+                    </StTodoBoxButton>
+                  </StTodoBoxButtonDiv>
+                </StTodoBoxDiv>
+              );
+            })}
         </StTodoDiv>
       </StTodosDiv>
     </StTodosContainer>

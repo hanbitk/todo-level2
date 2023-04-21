@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { addTodo } from "../../redux/modules/todos";
 
 const StForm = styled.form`
   display: flex;
@@ -42,28 +44,51 @@ const StFormBtn = styled.button`
 `;
 
 function Form() {
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
-  const [description, setDescription] = useState('');
+  const changeTitle = (e) => {
+    setTitle(e.target.value);
+  };
 
-  const changeTitle = (e) =>{
-    setTitle(e.target.value)
-  }
+  const changeDescription = (e) => {
+    setDescription(e.target.value);
+  };
 
-  const changeDescription = (e) =>{
-    setDescription(e.target.value)
-  }
+  const todos = useSelector((state) => {
+    return state.todos;
+  });
+
+  // console.log(todos)
+  //todos 할일 배열 [{}, {}]
+
+  const dispatch = useDispatch();
+
+  const todoSubmitHandler = (e) => {
+    e.preventDefault();
+    if (title === "" || description === "") {
+      alert("할일을 입력해주세요");
+    } else {
+      dispatch(addTodo(title, description));
+    }
+    setTitle("");
+    setDescription("");
+  };
 
   return (
-    <StForm>
+    <StForm onSubmit={todoSubmitHandler}>
       <StFormInputs>
         <StFormInputDiv>
           <StFormInputSpan>Title</StFormInputSpan>
-          <StFormInput value={title} type="text" onChange={changeTitle}/>
+          <StFormInput value={title} type="text" onChange={changeTitle} />
         </StFormInputDiv>
         <StFormInputDiv>
           <StFormInputSpan>Description</StFormInputSpan>
-          <StFormInput value={description} type="text" onChange={changeDescription}/>
+          <StFormInput
+            value={description}
+            type="text"
+            onChange={changeDescription}
+          />
         </StFormInputDiv>
       </StFormInputs>
 
