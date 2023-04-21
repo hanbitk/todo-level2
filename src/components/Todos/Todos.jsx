@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import DeleteButton from "../Buttons/DeleteButton";
 import ToggleButton from "../Buttons/ToggleButton";
+import { Link } from "react-router-dom";
 
 const StTodosContainer = styled.div`
   padding: 20px;
@@ -59,7 +60,9 @@ function Todos() {
             .map((todo) => {
               return (
                 <StTodoBoxDiv key={todo.id}>
-                  <StTodoBoxP>Details</StTodoBoxP>
+                  <StTodoBoxP>
+                    <Link to={`/${todo.id}`}>Details</Link>
+                  </StTodoBoxP>
                   <StTodoBoxh2>{todo.title}</StTodoBoxh2>
                   <StTodoBoxP>{todo.description}</StTodoBoxP>
                   <StTodoBoxButtonDiv>
@@ -82,7 +85,9 @@ function Todos() {
             .map((todo) => {
               return (
                 <StTodoBoxDiv key={todo.id}>
-                  <StTodoBoxP>Details</StTodoBoxP>
+                  <StTodoBoxP>
+                    <Link to={`/${todo.id}`}>Details</Link>
+                  </StTodoBoxP>
                   <StTodoBoxh2>{todo.title}</StTodoBoxh2>
                   <StTodoBoxP>{todo.description}</StTodoBoxP>
                   <StTodoBoxButtonDiv>
