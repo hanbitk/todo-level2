@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const StForm = styled.form`
@@ -42,16 +42,28 @@ const StFormBtn = styled.button`
 `;
 
 function Form() {
+  const [title, setTitle] = useState('');
+
+  const [description, setDescription] = useState('');
+
+  const changeTitle = (e) =>{
+    setTitle(e.target.value)
+  }
+
+  const changeDescription = (e) =>{
+    setDescription(e.target.value)
+  }
+
   return (
     <StForm>
       <StFormInputs>
         <StFormInputDiv>
           <StFormInputSpan>Title</StFormInputSpan>
-          <StFormInput type="text" />
+          <StFormInput value={title} type="text" onChange={changeTitle}/>
         </StFormInputDiv>
         <StFormInputDiv>
           <StFormInputSpan>Description</StFormInputSpan>
-          <StFormInput type="text" />
+          <StFormInput value={description} type="text" onChange={changeDescription}/>
         </StFormInputDiv>
       </StFormInputs>
 

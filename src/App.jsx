@@ -1,8 +1,9 @@
 import "./App.css";
 import styled from "styled-components";
-import Header from './components/Header/Header';
-import Form from './components/Form/Form';
-import Todos from './components/Todos/Todos';
+import Header from "./components/Header/Header";
+import Form from "./components/Form/Form";
+import Todos from "./components/Todos/Todos";
+import { useSelector } from "react-redux";
 
 const StContainer = styled.div`
   border: 1px solid red;
@@ -14,11 +15,13 @@ const StContainer = styled.div`
 `;
 
 function App() {
-  return <StContainer>
-    <Header/>
-    <Form/>
-    <Todos/>
-  </StContainer>;
+  return (
+    <StContainer>
+      <Header />
+      <Form />
+      <Todos />
+    </StContainer>
+  );
 }
 
 export default App;

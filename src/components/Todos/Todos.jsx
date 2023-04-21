@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector } from 'react-redux';
 
 const StTodosContainer = styled.div`
   padding: 20px;
@@ -48,6 +49,11 @@ const StTodoBoxButton = styled.button`
 `;
 
 function Todos() {
+  // const todos = useSelector((state) => {
+  //   return state.todos;
+  // });
+
+  // console.log(todos);
   return (
     <StTodosContainer>
       <StTodosDiv>
