@@ -61,7 +61,12 @@ function Todos() {
               return (
                 <StTodoBoxDiv key={todo.id}>
                   <StTodoBoxP>
-                    <Link to={`/${todo.id}`}>Details</Link>
+                    <Link
+                      to={`/${todo.id}`}
+                      style={{ textDecoration: "none", color: "gray" }}
+                    >
+                      Details
+                    </Link>
                   </StTodoBoxP>
                   <StTodoBoxh2>{todo.title}</StTodoBoxh2>
                   <StTodoBoxP>{todo.description}</StTodoBoxP>
@@ -86,7 +91,12 @@ function Todos() {
               return (
                 <StTodoBoxDiv key={todo.id}>
                   <StTodoBoxP>
-                    <Link to={`/${todo.id}`}>Details</Link>
+                    <Link
+                      to={`/${todo.id}`}
+                      style={{ textDecoration: "none", color: "gray" }}
+                    >
+                      Details
+                    </Link>
                   </StTodoBoxP>
                   <StTodoBoxh2>{todo.title}</StTodoBoxh2>
                   <StTodoBoxP>{todo.description}</StTodoBoxP>
