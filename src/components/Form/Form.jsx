@@ -46,17 +46,17 @@ function Form() {
     <StForm>
       <StFormInputs>
         <StFormInputDiv>
-          <StFormInputSpan>제목</StFormInputSpan>
+          <StFormInputSpan>Title</StFormInputSpan>
           <StFormInput type="text" />
         </StFormInputDiv>
         <StFormInputDiv>
-          <StFormInputSpan>내용</StFormInputSpan>
+          <StFormInputSpan>Description</StFormInputSpan>
           <StFormInput type="text" />
         </StFormInputDiv>
       </StFormInputs>
 
       <StFormBtnDiv>
-        <StFormBtn>추가하기</StFormBtn>
+        <StFormBtn>Add</StFormBtn>
       </StFormBtnDiv>
     </StForm>
   );
