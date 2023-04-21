@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { deleteTodo } from "../../redux/modules/todos";
+import DeleteButton from "../Buttons/DeleteButton";
 
 const StTodosContainer = styled.div`
   padding: 20px;
@@ -63,8 +64,6 @@ function Todos() {
     dispatch(deleteTodo(newTodos));
   };
 
-  // console.log(todos);
-  // 현재 todos는 배열안에 각 todo 객체를 리턴하는 중
   return (
     <StTodosContainer>
       <StTodosDiv>
@@ -81,12 +80,10 @@ function Todos() {
                   <StTodoBoxh2>{todo.title}</StTodoBoxh2>
                   <StTodoBoxP>{todo.description}</StTodoBoxP>
                   <StTodoBoxButtonDiv>
-                    <StTodoBoxButton
-                      borderColor="red"
-                      onClick={() => deleteTodoHandler(todo.id)}
-                    >
-                      Delete
-                    </StTodoBoxButton>
+                    <DeleteButton
+                      deleteTodoHandler={deleteTodoHandler}
+                      todo={todo}
+                    />
                     <StTodoBoxButton borderColor="green">
                       Complete
                     </StTodoBoxButton>
@@ -111,7 +108,10 @@ function Todos() {
                   <StTodoBoxh2>{todo.title}</StTodoBoxh2>
                   <StTodoBoxP>{todo.description}</StTodoBoxP>
                   <StTodoBoxButtonDiv>
-                    <StTodoBoxButton borderColor="red">Delete</StTodoBoxButton>
+                    <DeleteButton
+                      deleteTodoHandler={deleteTodoHandler}
+                      todo={todo}
+                    />
                     <StTodoBoxButton borderColor="green">
                       Incomplete
                     </StTodoBoxButton>
