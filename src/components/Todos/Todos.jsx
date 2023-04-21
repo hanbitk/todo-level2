@@ -1,8 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { deleteTodo } from "../../redux/modules/todos";
+import { deleteTodo, toggleTodo } from "../../redux/modules/todos";
 import DeleteButton from "../Buttons/DeleteButton";
+import ToggleButton from "../Buttons/ToggleButton";
 
 const StTodosContainer = styled.div`
   padding: 20px;
@@ -64,6 +65,13 @@ function Todos() {
     dispatch(deleteTodo(newTodos));
   };
 
+  const toggleHandler = (id) => {
+    const updatedTodos = [...todos];
+    const idx = todos.findIndex((todo) => todo.id === id);
+    updatedTodos[idx].isDone = !updatedTodos[idx].isDone;
+    dispatch(toggleTodo(updatedTodos));
+  };
+
   return (
     <StTodosContainer>
       <StTodosDiv>
@@ -84,9 +92,7 @@ function Todos() {
                       deleteTodoHandler={deleteTodoHandler}
                       todo={todo}
                     />
-                    <StTodoBoxButton borderColor="green">
-                      Complete
-                    </StTodoBoxButton>
+                    <ToggleButton todo={todo} toggleHandler={toggleHandler} />
                   </StTodoBoxButtonDiv>
                 </StTodoBoxDiv>
               );
@@ -112,9 +118,7 @@ function Todos() {
                       deleteTodoHandler={deleteTodoHandler}
                       todo={todo}
                     />
-                    <StTodoBoxButton borderColor="green">
-                      Incomplete
-                    </StTodoBoxButton>
+                    <ToggleButton todo={todo} toggleHandler={toggleHandler} />
                   </StTodoBoxButtonDiv>
                 </StTodoBoxDiv>
               );

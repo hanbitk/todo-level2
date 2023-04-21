@@ -1,5 +1,6 @@
 const ADD_TODO = "todos/ADD_TODO";
 const DELETE_TODO = "todos/DELETE_TODO";
+const TOGGLE_TODO = "todos/TOGGLE_TODO";
 
 const uuid = () => {
   return Math.floor(Date.now() + Math.random() * 100);
@@ -37,6 +38,13 @@ export const deleteTodo = (newtodos) => {
   };
 };
 
+export const toggleTodo = (updatetodos) => {
+  return {
+    type: TOGGLE_TODO,
+    payload: updatetodos,
+  };
+};
+
 const todos = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
@@ -51,6 +59,10 @@ const todos = (state = initialState, action) => {
       ];
     case DELETE_TODO:
       return action.payload;
+
+    case TOGGLE_TODO:
+      return action.payload;
+
     default:
       return state;
   }

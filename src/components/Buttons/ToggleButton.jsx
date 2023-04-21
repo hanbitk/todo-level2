@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from 'react-redux';
 import styled from "styled-components";
 
 const StTodoBoxButton = styled.button`
@@ -10,16 +9,12 @@ const StTodoBoxButton = styled.button`
   font-weight: bold;
 `;
 
-function DeleteButton({ todo, deleteTodoHandler }) {
-    
+function ToggleButton({ todo, toggleHandler }) {
   return (
-    <StTodoBoxButton
-      borderColor="red"
-      onClick={() => deleteTodoHandler(todo.id)}
-    >
-      Delete
+    <StTodoBoxButton borderColor="green" onClick={() => toggleHandler(todo.id)}>
+      {!todo.isDone ? "Complete" : "Incomplete"}
     </StTodoBoxButton>
   );
 }
 
-export default DeleteButton;
+export default ToggleButton;

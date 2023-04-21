@@ -5,7 +5,6 @@ import Form from "./components/Form/Form";
 import Todos from "./components/Todos/Todos";
 
 const StContainer = styled.div`
-  border: 1px solid red;
   max-width: 1200px;
   min-width: 800px;
   margin: 0 auto;
