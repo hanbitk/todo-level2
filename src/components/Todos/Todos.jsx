@@ -43,34 +43,10 @@ const StTodoBoxButtonDiv = styled.div`
   justify-content: space-around;
 `;
 
-const StTodoBoxButton = styled.button`
-  border: 2px solid ${(props) => props.borderColor};
-  border-radius: 15px;
-  padding: 10px;
-  width: 120px;
-  font-weight: bold;
-`;
-
 function Todos() {
   const todos = useSelector((state) => {
     return state.todos;
   });
-
-  const dispatch = useDispatch();
-
-  const deleteTodoHandler = (id) => {
-    const newTodos = todos.filter((todo) => {
-      return todo.id !== id;
-    });
-    dispatch(deleteTodo(newTodos));
-  };
-
-  const toggleHandler = (id) => {
-    const updatedTodos = [...todos];
-    const idx = todos.findIndex((todo) => todo.id === id);
-    updatedTodos[idx].isDone = !updatedTodos[idx].isDone;
-    dispatch(toggleTodo(updatedTodos));
-  };
 
   return (
     <StTodosContainer>
@@ -84,15 +60,12 @@ function Todos() {
             .map((todo) => {
               return (
                 <StTodoBoxDiv key={todo.id}>
-                  <StTodoBoxP>{todo.details}</StTodoBoxP>
+                  <StTodoBoxP>Details</StTodoBoxP>
                   <StTodoBoxh2>{todo.title}</StTodoBoxh2>
                   <StTodoBoxP>{todo.description}</StTodoBoxP>
                   <StTodoBoxButtonDiv>
-                    <DeleteButton
-                      deleteTodoHandler={deleteTodoHandler}
-                      todo={todo}
-                    />
-                    <ToggleButton todo={todo} toggleHandler={toggleHandler} />
+                    <DeleteButton todo={todo} />
+                    <ToggleButton todo={todo} />
                   </StTodoBoxButtonDiv>
                 </StTodoBoxDiv>
               );
@@ -110,15 +83,12 @@ function Todos() {
             .map((todo) => {
               return (
                 <StTodoBoxDiv key={todo.id}>
-                  <StTodoBoxP>{todo.details}</StTodoBoxP>
+                  <StTodoBoxP>Details</StTodoBoxP>
                   <StTodoBoxh2>{todo.title}</StTodoBoxh2>
                   <StTodoBoxP>{todo.description}</StTodoBoxP>
                   <StTodoBoxButtonDiv>
-                    <DeleteButton
-                      deleteTodoHandler={deleteTodoHandler}
-                      todo={todo}
-                    />
-                    <ToggleButton todo={todo} toggleHandler={toggleHandler} />
+                    <DeleteButton todo={todo} />
+                    <ToggleButton todo={todo} />
                   </StTodoBoxButtonDiv>
                 </StTodoBoxDiv>
               );
