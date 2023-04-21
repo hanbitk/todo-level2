@@ -59,9 +59,6 @@ function Form() {
     return state.todos;
   });
 
-  // console.log(todos)
-  //todos 할일 배열 [{}, {}]
-
   const dispatch = useDispatch();
 
   const todoSubmitHandler = (e) => {
@@ -75,7 +72,7 @@ function Form() {
     setDescription("");
   };
 
-  console.log(todos)
+  console.log(todos);
 
   return (
     <StForm onSubmit={todoSubmitHandler}>

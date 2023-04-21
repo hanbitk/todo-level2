@@ -1,7 +1,6 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { deleteTodo, toggleTodo } from "../../redux/modules/todos";
 import DeleteButton from "../Buttons/DeleteButton";
 import ToggleButton from "../Buttons/ToggleButton";
 
