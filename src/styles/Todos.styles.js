@@ -4,7 +4,7 @@ export const StTodosContainer = styled.div`
   padding: 20px;
 `;
 
-export const StTodosDiv = styled.div``;
+export const StTodosSection = styled.section``;
 
 export const StTodoTitleDiv = styled.div`
   margin-block: 15px;

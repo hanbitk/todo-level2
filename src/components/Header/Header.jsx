@@ -1,12 +1,11 @@
 import React from "react";
-import { StHeader } from '../../styles/Header.styles';
-
+import { StHeader, StHeaderh3 } from "../../styles/Header.styles";
 
 function Header() {
   return (
     <StHeader>
-      <h3>My Todo List</h3>
-      <h3>React</h3>
+      <StHeaderh3>My Todo List</StHeaderh3>
+      <StHeaderh3>React</StHeaderh3>
     </StHeader>
   );
 }

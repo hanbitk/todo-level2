@@ -10,3 +10,5 @@ export const StHeader = styled.header`
   padding: 20px;
   margin-top: 10px;
 `;
+
+export const StHeaderh3 = styled.h3``;

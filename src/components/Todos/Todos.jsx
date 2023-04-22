@@ -5,7 +5,7 @@ import ToggleButton from "../Buttons/ToggleButton";
 import { Link } from "react-router-dom";
 import {
   StTodosContainer,
-  StTodosDiv,
+  StTodosSection,
   StTodoTitleDiv,
   StTodoDiv,
   StTodoh2,
@@ -22,7 +22,7 @@ function Todos() {
 
   return (
     <StTodosContainer>
-      <StTodosDiv>
+      <StTodosSection>
         <StTodoTitleDiv>
           <StTodoh2>Working...🔥</StTodoh2>
         </StTodoTitleDiv>
@@ -50,9 +50,9 @@ function Todos() {
               );
             })}
         </StTodoDiv>
-      </StTodosDiv>
+      </StTodosSection>
 
-      <StTodosDiv>
+      <StTodosSection>
         <StTodoTitleDiv>
           <StTodoh2>Done...🌈</StTodoh2>
         </StTodoTitleDiv>
@@ -80,7 +80,7 @@ function Todos() {
               );
             })}
         </StTodoDiv>
-      </StTodosDiv>
+      </StTodosSection>
     </StTodosContainer>
   );
 }
