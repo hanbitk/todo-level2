@@ -1,16 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import { StHeader } from '../../styles/Header.styles';
 
-const StHeader = styled.header`
-  border: 1px solid lightgray;
-  border-radius: 2px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  padding: 20px;
-  margin-top: 10px;
-`;
 
 function Header() {
   return (

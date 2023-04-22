@@ -1,24 +1,20 @@
 import React from "react";
-import styled from "styled-components";
 import Header from "../components/Header/Header";
 import Form from "../components/Form/Form";
 import Todos from "../components/Todos/Todos";
-
-const StContainer = styled.div`
-  max-width: 1200px;
-  min-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-`;
+import { GlobalStyle } from "../styles/GlobalStyles";
+import { StContainer } from '../styles/Container.styles';
 
 function TodoApp() {
   return (
-    <StContainer>
-      <Header />
-      <Form />
-      <Todos />
-    </StContainer>
+    <>
+    <GlobalStyle/>
+      <StContainer>
+        <Header />
+        <Form />
+        <Todos />
+      </StContainer>
+    </>
   );
 }
 

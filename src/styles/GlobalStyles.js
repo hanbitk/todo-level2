@@ -1,9 +1,11 @@
-/* CSS RESET SETTINGS */
+import { createGlobalStyle } from "styled-components";
 
-/* * {
+export const GlobalStyle = createGlobalStyle`
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;  
 }
 
 button {
@@ -17,4 +19,5 @@ input {
   background-image: none;
   background-color: transparent;
   box-shadow: none;
-} */
+}       
+`;

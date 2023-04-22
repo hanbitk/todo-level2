@@ -1,15 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleTodo } from '../../redux/modules/todos';
-
-const StTodoBoxButton = styled.button`
-  border: 2px solid ${(props) => props.borderColor};
-  border-radius: 15px;
-  padding: 10px;
-  width: 110px;
-  font-weight: bold;
-`;
+import { toggleTodo } from "../../redux/modules/todos";
+import { StTodoBoxButton } from "../../styles/Buttons.styles";
 
 function ToggleButton({ todo }) {
   const todos = useSelector((state) => {

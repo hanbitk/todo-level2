@@ -6,6 +6,7 @@ const uuid = () => {
   return Math.floor(Date.now() + Math.random() * 100);
 };
 
+
 const initialState = [
   {
     id: uuid(), // id는 모두 고유값이어야 합니다.

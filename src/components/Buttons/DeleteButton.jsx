@@ -1,15 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import styled from "styled-components";
 import { deleteTodo } from '../../redux/modules/todos';
-
-const StTodoBoxButton = styled.button`
-  border: 2px solid ${(props) => props.borderColor};
-  border-radius: 15px;
-  padding: 10px;
-  width: 110px;
-  font-weight: bold;
-`;
+import { StTodoBoxButton } from '../../styles/Buttons.styles';
 
 function DeleteButton({todo}) {
 

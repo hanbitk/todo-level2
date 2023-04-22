@@ -1,47 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import styled from "styled-components";
 import DeleteButton from "../Buttons/DeleteButton";
 import ToggleButton from "../Buttons/ToggleButton";
 import { Link } from "react-router-dom";
-
-const StTodosContainer = styled.div`
-  padding: 20px;
-`;
-
-const StTodosDiv = styled.div``;
-
-const StTodoTitleDiv = styled.div`
-  margin-block: 15px;
-`;
-
-const StTodoDiv = styled.div`
-  display: flex;
-  gap: 10px;
-`;
-
-const StTodoh2 = styled.h2``;
-
-const StTodoBoxDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border: 3px solid #bfc1bf;
-  border-radius: 15px;
-  width: 300px;
-  height: 200px;
-  padding-block: 10px;
-  padding-inline: 20px;
-`;
-
-const StTodoBoxP = styled.p``;
-
-const StTodoBoxh2 = styled.h2``;
-
-const StTodoBoxButtonDiv = styled.div`
-  display: flex;
-  justify-content: space-around;
-`;
+import {
+  StTodosContainer,
+  StTodosDiv,
+  StTodoTitleDiv,
+  StTodoDiv,
+  StTodoh2,
+  StTodoBoxDiv,
+  StTodoBoxP,
+  StTodoBoxh2,
+  StTodoBoxButtonDiv,
+} from "../../styles/Todos.styles";
 
 function Todos() {
   const todos = useSelector((state) => {
