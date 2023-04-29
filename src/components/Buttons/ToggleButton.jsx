@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTodo } from "../../redux/modules/todos";
-import { StTodoBoxButton } from "../../styles/Buttons.styles";
 import Button from "./Button";
 
 function ToggleButton({ todo }) {
