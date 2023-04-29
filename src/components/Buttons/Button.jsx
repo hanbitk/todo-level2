@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { StTodoBoxButton } from "../../styles/Buttons.styles";
 
-function Button() {
+function Button({ borderColor, children, onClick }) {
   return (
-    <div>Button</div>
-  )
+    <StTodoBoxButton borderColor={borderColor} onClick={onClick}>
+      {children}
+    </StTodoBoxButton>
+  );
 }
 
-export default Button
+export default Button;

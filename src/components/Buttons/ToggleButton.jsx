@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTodo } from "../../redux/modules/todos";
 import { StTodoBoxButton } from "../../styles/Buttons.styles";
+import Button from "./Button";
 
 function ToggleButton({ todo }) {
   const todos = useSelector((state) => {
@@ -18,9 +19,9 @@ function ToggleButton({ todo }) {
   };
 
   return (
-    <StTodoBoxButton borderColor="green" onClick={() => toggleHandler(todo.id)}>
+    <Button borderColor="green" onClick={() => toggleHandler(todo.id)}>
       {!todo.isDone ? "Complete" : "Incomplete"}
-    </StTodoBoxButton>
+    </Button>
   );
 }
 

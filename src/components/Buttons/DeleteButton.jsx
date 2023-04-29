@@ -1,13 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteTodo } from '../../redux/modules/todos';
-import { StTodoBoxButton } from '../../styles/Buttons.styles';
+import { useDispatch, useSelector } from "react-redux";
+import { deleteTodo } from "../../redux/modules/todos";
+import Button from "./Button";
 
-function DeleteButton({todo}) {
-
-  const todos = useSelector((state) =>{
-    return state.todos
-  })
+function DeleteButton({ todo }) {
+  const todos = useSelector((state) => {
+    return state.todos;
+  });
 
   const dispatch = useDispatch();
 
@@ -17,14 +16,13 @@ function DeleteButton({todo}) {
     });
     dispatch(deleteTodo(newTodos));
   };
-    
+
   return (
-    <StTodoBoxButton
-      borderColor="red"
-      onClick={() => deleteTodoHandler(todo.id)}
-    >
-      Delete
-    </StTodoBoxButton>
+    <div>
+      <Button borderColor="red" onClick={() => deleteTodoHandler(todo.id)}>
+        Delete
+      </Button>
+    </div>
   );
 }
 
